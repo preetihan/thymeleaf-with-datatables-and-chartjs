@@ -1,0 +1,563 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/DataTables/datatables.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/Chart.min.css}"/>
+</head>
+<body class="d-flex flex-column h-100">
+<p>Get your greeting <a href="/greeting">here</a></p>
+<div class="container-fluid">
+    <form action="#" th:action="@{/books/save}" th:object="${form}"
+          method="post">
+        <div class="row justify-content-md-center">
+            <table id="myTable" class="table table-hover table-striped" width="50%">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>dzh</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>zdrg</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>dzh</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>zdrg</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>dzh</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>zdrg</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>dzh</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>zdrg</td>
+                    <td>test</td>
+                    <td>toung</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>dzh</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>zdrg</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>dzh</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>zdrg</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <div class="container">
+        <br>
+        <div class="row justify-content-starter">
+            <div class="col">
+                <canvas id="ocChart" width="300" height="150"></canvas>
+            </div>
+            <div class="col">
+                <canvas id="orChart" width="300" height="150"></canvas>
+            </div>
+        </div>
+        <br><br>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <canvas id="ocSdvaChart" width="100" height="100"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="ocNurgChart" width="100" height="100"></canvas>
+            </div>
+        </div>
+        <br><br>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <canvas id="orSdvaChart" width="100" height="100"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="orNurgChart" width="100" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/DataTables/datatables.min.js}"></script>
+<script th:inline="javascript">
+        $(document).ready( function () {
+            $('#myTable').DataTable( {
+              "dom": "<'row'<'col'l><'col'f>>" +
+                     "<'row't>" +
+                     "<'row'<'col'i><'col'p>>"
+            } );
+        } );
+</script>
+<script type="text/javascript" th:src="@{/static/javascript/Chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/javascript/Chart.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/javascript/chartjs-plugin-datalabels.min.js}"></script>
+<script th:inline="javascript">
+        var ctx1 = document.getElementById('ocChart');
+        var ocChart = new Chart(ctx1, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['test1', 'test2', 'test3', 'test4'],
+                datasets: [{
+                    data: [1, 2, 3, 4],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'center'
+                    }
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    callbacks: {
+                       label: function(tooltipItem) {
+                          return tooltipItem.yLabel;
+                       }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'No. of files',
+                    position: 'bottom',
+                    fontSize: 14
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 1
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 1
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx2 = document.getElementById('orChart');
+        var orChart = new Chart(ctx2, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['test1', 'test2', 'test3', 'test4'],
+                datasets: [{
+                    data: [5, 6, 7, 8],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'center'
+                    }
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    callbacks: {
+                       label: function(tooltipItem) {
+                          return tooltipItem.yLabel;
+                       }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'No. of files',
+                    position: 'bottom',
+                    fontSize: 14
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 1
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 1
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx3 = document.getElementById('ocSdvaChart');
+        var ocSdvaChart = new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['test1', 'test2', 'test3'],
+                datasets: [{
+                    data: [
+                        1,
+                        5,
+                        10
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'center',
+                        display: function(context) {
+                            return context.dataset.data[context.dataIndex] > 0;
+                        }
+                    }
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'test3',
+                    position: 'top',
+                    fontSize: 14
+                }
+            }
+        });
+
+        var ctx4 = document.getElementById('ocNurgChart');
+        var ocNurgChart = new Chart(ctx4, {
+            type: 'doughnut',
+            data: {
+                labels: ['test1', 'test2', 'test3'],
+                datasets: [{
+                    data: [
+                        23,
+                        5,
+                        9
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'center',
+                        display: function(context) {
+                            return context.dataset.data[context.dataIndex] > 0;
+                        }
+                    }
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'test4',
+                    position: 'top',
+                    fontSize: 14
+                }
+            }
+        });
+
+        var ctx5 = document.getElementById('orSdvaChart');
+        var orSdvaChart = new Chart(ctx5, {
+            type: 'doughnut',
+            data: {
+                labels: ['test1', 'test2', 'test3'],
+                datasets: [{
+                    data: [
+                        3,
+                        60,
+                        20
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'center',
+                        display: function(context) {
+                            return context.dataset.data[context.dataIndex] > 0;
+                        }
+                    }
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'test5',
+                    position: 'top',
+                    fontSize: 14
+                }
+            }
+        });
+
+        var ctx6 = document.getElementById('orNurgChart');
+        var orNurgChart = new Chart(ctx6, {
+            type: 'doughnut',
+            data: {
+                labels: ['test1', 'test2', 'test3'],
+                datasets: [{
+                    data: [
+                        0,
+                        0,
+                        0
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'center',
+                        display: function(context) {
+                            return context.dataset.data[context.dataIndex] > 0;
+                        }
+                    }
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'test6',
+                    position: 'top',
+                    fontSize: 14
+                }
+            }
+        });
+    </script>
+</body>
+</html>
