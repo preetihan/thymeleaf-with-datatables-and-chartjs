@@ -6,10 +6,65 @@
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/static/DataTables/datatables.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/Chart.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap-glyphicons.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/tempusdominus-bootstrap-4.min.css}"/>
 </head>
 <body class="d-flex flex-column h-100">
 <p>Get your greeting <a href="/greeting">here</a></p>
 <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-6 col-sm-3">
+            :
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="input-group date" id="startdate" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#startdate" required/>
+                <div class="input-group-append" data-target="#startdate" data-toggle="datetimepicker">
+                    <div class="input-group-text"><span class="glyphicon glyphicon-calendar"></span></div>
+                </div>
+            </div>
+        </div>
+        <p class="text-danger">*</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 col-sm-3">
+            :
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="input-group date" id="enddate" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#enddate" required/>
+                <div class="input-group-append" data-target="#enddate" data-toggle="datetimepicker">
+                    <div class="input-group-text"><span class="glyphicon glyphicon-calendar"></span></div>
+                </div>
+            </div>
+        </div>
+        <p class="text-danger">*</p>
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <form action="#" th:action="@{/books/save}" th:object="${form}"
           method="post">
         <div class="row justify-content-md-center">
@@ -255,9 +310,13 @@
             } );
         } );
 </script>
+<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
 <script type="text/javascript" th:src="@{/static/javascript/Chart.min.js}"></script>
 <script type="text/javascript" th:src="@{/static/javascript/Chart.bundle.min.js}"></script>
 <script type="text/javascript" th:src="@{/static/javascript/chartjs-plugin-datalabels.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/javascript/moment.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/javascript/tempusdominus-bootstrap-4.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/javascript/mainscript.js}"></script>
 <script th:inline="javascript">
         var ctx1 = document.getElementById('ocChart');
         var ocChart = new Chart(ctx1, {

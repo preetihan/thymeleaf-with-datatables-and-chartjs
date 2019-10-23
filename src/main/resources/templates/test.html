@@ -7,26 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-glyphicons.min.css}" />
-    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/icon/itmx-icon.png}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/tempusdominus-bootstrap-4.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
-    <title>Online Transaction Search</title>
 </head>
 <body class="d-flex flex-column h-100">
     <header>
         <div class="container-fluid" style="background-color: #e9ecef;">
-            <div class="row">
-                <div class="col-md-4">
-                    <img th:src="@{/images/itmx-logo.png}" width="238px" height="89px" >
-                </div>
-                <div class="col-md-4 offset-md-4">
-                    <p class="text-right">
-                        <span class="glyphicon glyphicon-user"></span> <label th:if="${userBean != null && userBean.userId != null}" th:text="${userBean.userId}"></label>&emsp;&emsp;&emsp;<span class="glyphicon glyphicon-log-out"></span><a th:href="@{/logout}"> <label th:text="#{ts.label.menu.logout}"></label></a>
-                        <br><br>
-                        <span class="glyphicon glyphicon-time"></span> <label th:text="#{ts.label.menu.time}"></label> : <label th:text="${timelog}"></label>
-                    </p>
-                </div>
-            </div>
         </div>
         <nav class="navbar navbar-expand-sm navbar-dark shadow-lg p-0 mb-5" style="background-color: #02719C;">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,14 +27,9 @@
         </nav>
     </header>
     <main role="main" class="flex-shrink-0">
-        <form action="#" th:action="@{/search}" th:object="${shcLog}" method="post">
+        <form action="#" th:action="@{/search}" method="post">
             <div class="form-group">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 offset-md-2">
-                            <p class="h5"><ins><strong><label th:text="#{ts.label.search.header}"></label></strong></ins></p>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-md-3 offset-md-3">
                             <p class="h6"><u>Transaction Date/Time</u></p>
@@ -56,16 +37,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3 offset-md-3">
-                            <p><label th:text="#{ts.label.search.specify.date.range}"></label></p>
+                            <p><label th:text="ts.label.search.specify.date.range"></label></p>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.start.date.time}"></label> :
+                            <label th:text="ts.label.search.start.date.time"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
                             <div class="input-group date" id="startdate" data-target-input="nearest">
-                                <input th:field="*{startDate}" type="text" class="form-control datetimepicker-input" data-target="#startdate" required/>
+                                <input type="text" class="form-control datetimepicker-input" data-target="#startdate" required/>
                                 <div class="input-group-append" data-target="#startdate" data-toggle="datetimepicker">
                                     <div class="input-group-text"><span class="glyphicon glyphicon-calendar"></span></div>
                                 </div>
@@ -75,11 +56,11 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.end.date.time}"></label> :
+                            <label th:text="ts.label.search.end.date.time"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
                             <div class="input-group date" id="enddate" data-target-input="nearest">
-                                <input th:field="*{endDate}" type="text" class="form-control datetimepicker-input" data-target="#enddate" required/>
+                                <input type="text" class="form-control datetimepicker-input" data-target="#enddate" required/>
                                 <div class="input-group-append" data-target="#enddate" data-toggle="datetimepicker">
                                     <div class="input-group-text"><span class="glyphicon glyphicon-calendar"></span></div>
                                 </div>
@@ -89,10 +70,10 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.txn.type}"></label> :
+                            <label th:text="ts.label.search.txn.type"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
-                            <select class="form-control" id="pcode" th:field="*{pcode}">
+                            <select class="form-control" id="pcode" >
                                 <option th:value="-1">--------- Please Select ---------</option>
                                 <option th:value="260000">Payment</option>
                                 <option th:value="380000">QR Transformation</option>
@@ -101,59 +82,53 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.merchant.id}"></label> :
+                            <label th:text="ts.label.search.merchant.id"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
-                            <input th:field="*{pan}" type="text" class="form-control" id="pan">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.appr.code}"></label> :
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <input th:field="*{authnum}" type="text" class="form-control" id="authnum">
+                            <input type="text" class="form-control" id="pan">
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.sys.trace.num}"></label> :
+                            <label th:text="ts.label.search.appr.code"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
-                            <input th:field="*{trace}" type="text" class="form-control" id="trace">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.ref.num}"></label> :
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <input th:field="*{refnum}" type="text" class="form-control" id="refnum">
+                            <input type="text" class="form-control" id="authnum">
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.acq.bank}"></label> :
+                            <label th:text="ts.label.search.sys.trace.num"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
-                            <select class="form-control" id="acqBank" th:field="*{acquirer}">
+                            <input type="text" class="form-control" id="trace">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.ref.num"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <input type="text" class="form-control" id="refnum">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.acq.bank"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <select class="form-control" id="acqBank">
                                 <option th:value="-1">--------- Please Select ---------</option>
-                                <option th:each="dropDownItem1 : ${acquirerList}"
-                                        th:value="${dropDownItem1.memberId}"
-                                        th:text="${dropDownItem1.memberName} + ' : ' + ${dropDownItem1.memberFullName}" />
                             </select>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-3">
-                            <label th:text="#{ts.label.search.iss.bank}"></label> :
+                            <label th:text="ts.label.search.iss.bank"></label> :
                         </div>
                         <div class="col-6 col-sm-3">
-                            <select class="form-control" id="issBank" th:field="*{issuer}">
+                            <select class="form-control" id="issBank">
                                 <option th:value="-1">--------- Please Select ---------</option>
-                                <option th:each="dropDownItem2 : ${issuingList}"
-                                        th:value="${dropDownItem2.memberId}"
-                                        th:text="${dropDownItem2.memberName} + ' : ' + ${dropDownItem2.memberFullName}" />
                             </select>
                         </div>
                     </div>
@@ -166,27 +141,15 @@
             </div>
         </form>
 
-        <!-- Progress Modal -->
-        <div class="modal fade" id="progressModal" tabindex="-1" role="dialog" aria-labelledby="progressModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body center-block">
-                        <div class="progress" style="height:25px">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width:100%;height:25px" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
     <br><br>
     <footer class="footer mt-auto py-3">
         <div class="container text-center">
-            <span class="text-muted "><span class="glyphicon glyphicon-copyright-mark"></span> <label th:text="#{ts.label.footer.copyright}"></label></span>
+            <span class="text-muted "><span class="glyphicon glyphicon-copyright-mark"></span> <label th:text="ts.label.footer.copyright"></label></span>
         </div>
     </footer>
 
-    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.0/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
     <script type="text/javascript" th:src="@{/javascript/moment.min.js}"></script>
     <script type="text/javascript" th:src="@{/javascript/tempusdominus-bootstrap-4.min.js}"></script>
     <script type="text/javascript" th:src="@{/javascript/mainscript.js}"></script>

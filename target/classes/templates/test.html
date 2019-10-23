@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-glyphicons.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tempusdominus-bootstrap-4.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+</head>
+<body class="d-flex flex-column h-100">
+    <header>
+        <div class="container-fluid" style="background-color: #e9ecef;">
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-dark shadow-lg p-0 mb-5" style="background-color: #02719C;">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/}">
+                            <span class="glyphicon glyphicon-home"></span>  Online Transaction Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="flex-shrink-0">
+        <form action="#" th:action="@{/search}" method="post">
+            <div class="form-group">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 offset-md-3">
+                            <p class="h6"><u>Transaction Date/Time</u></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 offset-md-3">
+                            <p><label th:text="ts.label.search.specify.date.range"></label></p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.start.date.time"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group date" id="startdate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#startdate" required/>
+                                <div class="input-group-append" data-target="#startdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-danger">*</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.end.date.time"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group date" id="enddate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#enddate" required/>
+                                <div class="input-group-append" data-target="#enddate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-danger">*</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.txn.type"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <select class="form-control" id="pcode" >
+                                <option th:value="-1">--------- Please Select ---------</option>
+                                <option th:value="260000">Payment</option>
+                                <option th:value="380000">QR Transformation</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.merchant.id"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <input type="text" class="form-control" id="pan">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.appr.code"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <input type="text" class="form-control" id="authnum">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.sys.trace.num"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <input type="text" class="form-control" id="trace">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.ref.num"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <input type="text" class="form-control" id="refnum">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text="ts.label.search.acq.bank"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <select class="form-control" id="acqBank">
+                                <option th:value="-1">--------- Please Select ---------</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-3">
+                            <label th:text=ts.label.search.iss.bank"></label> :
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <select class="form-control" id="issBank" th:field="*{issuer}">
+                                <option th:value="-1">--------- Please Select ---------</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row justify-content-center">
+                        <button class="btn btn-primary" type="submit" value="Submit">Search</button>&nbsp;&nbsp;
+                        <button class="btn btn-secondary" type="reset" value="Reset">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </main>
+    <br><br>
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span class="text-muted "><span class="glyphicon glyphicon-copyright-mark"></span> <label th:text="ts.label.footer.copyright"></label></span>
+        </div>
+    </footer>
+
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/moment.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/tempusdominus-bootstrap-4.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/mainscript.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
